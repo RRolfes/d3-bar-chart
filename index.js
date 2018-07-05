@@ -6,3 +6,4 @@ d3.select(".chart")
     .enter()
     .append("div")
     .style("width", function(d) { return d + "px"; })
+    .text(function (d) { return d; });
