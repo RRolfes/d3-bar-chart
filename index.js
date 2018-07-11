@@ -19,3 +19,17 @@ const barChart = svg.selectAll("rect")
     const translate = [ i * barWidth, 0];
     return `translate(${translate})`;
   });
+
+  const text = d3.selectAll("text")
+    .data(dataset)
+    .enter()
+    .append('text')
+    .text(function(d){
+      return d;
+    })
+    .attr('y', function(d) {
+      return svgHeight - d - 3;
+    })
+    .attr('x', function(d) {
+      
+    })
