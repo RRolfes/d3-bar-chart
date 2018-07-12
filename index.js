@@ -35,8 +35,8 @@ const y_axis = d3.axisLeft()
   .scale(yScaled);
 
 svg.append("g")
-.attr("transform", "translate(50, 10)")
-.call(y_axis);
+  .attr("transform", "translate(50, 10)")
+  .call(y_axis);
 
 
 
