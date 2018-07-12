@@ -35,6 +35,7 @@ const yScaled = d3.scaleLinear()
     .scale(yScaled);
 
     svg.append("g")
+    .attr("transform", "translate(50, 10)")
 
 
 
