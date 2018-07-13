@@ -34,6 +34,9 @@ const yScaled = d3.scaleLinear()
   const y_axis = d3.axisLeft()
     .scale(yScaled);
 
+    svg.append("g")
+
+
 
 
 const barChart = svg.selectAll("rect")
