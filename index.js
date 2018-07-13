@@ -1,6 +1,7 @@
 // Types of Axis
 d3.axisTop()
 d3.axisRight()
+d3.axisBottom()
 
 
 // const dataset = [80, 100, 56, 120, 180, 30, 40, 120, 160];
