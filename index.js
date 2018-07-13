@@ -1,3 +1,6 @@
+// Types of Axis
+
+
 // const dataset = [80, 100, 56, 120, 180, 30, 40, 120, 160];
 const dataset = [1,2,3,4,5,7, 8, 10, 20];
 
