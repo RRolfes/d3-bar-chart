@@ -32,7 +32,7 @@ const yScaled = d3.scaleLinear()
     .scale(xScaled);
 
   const y_axis = d3.axisLeft()
-  .scale(yScaled);
+    .scale(yScaled);
 
 const barChart = svg.selectAll("rect")
   .data(dataset)
