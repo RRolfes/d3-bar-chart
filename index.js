@@ -20,7 +20,9 @@ const svg = d3.select("svg")
 // used to return a number based on proportions to best use space
 
 const xScaled = d3.scaleLinear()
-  .domain([0, d3.max(data)])
+  .domain([0, d3.max(dataset)])
+  .range([0, svgWidth]);
+
 
 const yScaled = d3.scaleLinear()
   .domain([0, d3.max(dataset) +1])
