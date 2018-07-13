@@ -40,5 +40,5 @@ const text = svg.selectAll("text")
     return svgHeight - yScaled(d) - 3;
   })
   .attr("x", function(d, i) {
-    return barWidth * i + barWidth / 2 - 5;
+    return barWidth * i + barWidth / 2 - 6;
   });
