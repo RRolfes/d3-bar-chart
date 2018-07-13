@@ -28,9 +28,8 @@ const yScaled = d3.scaleLinear()
   .domain([0, d3.max(dataset) +1])
   .range([0, svgHeight]);
 
-const x_axis = d3.axisBottom().scale(xScaled);
+  const x_axis = d3.axisBottom().scale(xScaled);
 
-const y_axis = d3.axisLeft().scale(yScaled);
 
 const barChart = svg.selectAll("rect")
   .data(dataset)
