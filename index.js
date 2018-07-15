@@ -10,7 +10,7 @@ const dataset = [80, 100, 56, 120, 180, 30, 40, 120, 160];
 
 
 const svgWidth = 500;
-const svgHeight = 350;
+const svgHeight = 300;
 const barPadding = 5;
 const barWidth = (svgWidth / dataset.length);
 
