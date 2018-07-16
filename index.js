@@ -5,8 +5,8 @@ d3.axisBottom()
 d3.axisLeft()
 
 
-const dataset = [80, 100, 56, 120, 180, 30, 40, 120, 160];
-// const dataset = [1, 2, 3, 4, 5, 7, 8, 10, 20];
+// const dataset = [80, 100, 56, 120, 180, 30, 40, 120, 160];
+const dataset = [1, 2, 3, 4, 5, 7, 8, 10, 20];
 
 
 const svgWidth = 500;
@@ -21,35 +21,36 @@ const svg = d3.select("svg")
 
 // used to return a number based on proportions to best use space
 
-const xScaled = d3.scaleLinear()
+const xScale = d3.scaleLinear()
   .domain([0, d3.max(dataset)])
   .range([0, svgWidth]);
 
 
-const yScaled = d3.scaleLinear()
-  .domain([0, d3.max(dataset) +1])
+const yScale = d3.scaleLinear()
+  .domain([0, d3.max(dataset)])
   .range([0, svgHeight]);
 
 const x_axis = d3.axisBottom()
-  .scale(xScaled);
+  .scale(xScale);
 
 const y_axis = d3.axisLeft()
-  .scale(yScaled);
+  .scale(yScale);
 
 svg.append("g")
   .attr("transform", "translate(50, 10)")
   .call(y_axis);
+  // .call(x_axis);
 
 
 
 const barChart = svg.selectAll("rect")
   .data(dataset)
-  .enter()
-  .append('rect')
-  .attr('y', function(d) { return svgHeight - yScaled(d); })
-  .attr('height', function(d) { return yScaled(d); })
+  .enter() // grabs all rects - there are none so...
+  .append('rect') // adds a rect for each data point
+  .attr('y', function(d) { return svgHeight - yScale(d); }) // attr's for rects
+  .attr('height', function(d) { return yScale(d); })
   .attr('width', barWidth - barPadding )
-  .attr('class', 'bar')
+  .attr('class', 'bar') // for css
   .attr('transform', function(d, i) {
     const translate = [ i * barWidth, 0];
     return `translate(${translate})`;
@@ -63,7 +64,7 @@ const text = svg.selectAll("text")
     return d;
   })
   .attr("y", function(d) {
-    return svgHeight - yScaled(d) - 3;
+    return svgHeight - yScale(d) - 3;
   })
   .attr("x", function(d, i) {
     return barWidth * i + barWidth / 2 - 6;
